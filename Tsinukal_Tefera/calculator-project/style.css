@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(21, 21, 39);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    background-color: rgba(13, 13, 26, 0.651);
+    max-width: 350px;
+    border: 8px solid rgb(46, 46, 81);
+    border-radius: 35px 35px 30px 30px;
+    margin: 50px auto;
+}
+.brand-name{
+    text-align: center;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.711);
+    size: 25px;
+    font-weight: bold;
+}
+.display{
+    padding: 15px;
+    height: 80px;
+    color: white;
+    font-size: 30px;
+}
+.controls{
+    padding: 30px 20px;
+    border-radius: 20px;
+    background-color: rgb(21, 21, 39);
+}
+.row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 60px;
+    column-gap: 10px;
+    margin-bottom: 12px;
+}
+button{
+    border-radius: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(35, 35, 47);
+    border: none;
+}
+.btn-clear{
+    background-color: rgba(240, 82, 82, 0.451);
+}
+.operation{
+    background-color: rgba(30, 30, 138, 0.584);
+    color: rgb(0, 0, 254);
+    font-size: 1.7rem;
+}
+.op-equal{
+    background-color: dodgerblue;
+    font-size: 1.7rem;
+}
+button:hover{
+    transform: scale(1.05);
+}
