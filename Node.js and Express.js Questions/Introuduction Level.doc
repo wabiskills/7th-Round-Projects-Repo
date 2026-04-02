@@ -1,0 +1,53 @@
+	
+                                                                                   PART 1: Node.js Fundamentals	
+1.	Node.js is a JavaScript runtime that allows us to run JavaScript on the server. It is called a runtime because it executes JavaScript code outside the browser.
+2.	Client-side JavaScript runs in the browser (e.g., form validation), while server-side JavaScript runs on the server (e.g., saving user data).
+3.	Node.js Core Modules:
+	http: Used to create a server
+	fs: Used to read/write files
+	path: Used to handle file paths
+4.	Simple server: const http = require("http"); const server = http.createServer((req, res) => { res.end("Welcome to Wabiskill Family"); }); server.listen(3000);
+5.	A port number is used to identify a server. If two applications use the same port, an error occurs.
+6.	app.listen(5000, () => { console.log("Server running..."); }); This starts the server on port 7000 and prints a message.
+      7. require() is used to import modules: const fs = require("fs");
+      8. package.json is a file that stores project information and dependencies.
+      9 .npm stands for Node Package Manager. It is used to install packages.
+                                               PART 2: Express.js Fundamentals
+    10. Express.js is a framework for Node.js that makes building servers easier.
+  11. Steps:
+	npm init -y
+	npm install express
+	Create server using express()
+   12.GET route: app.get("/", (req, res) => { res.send("Hello Express"); });
+   13.  Routing:
+	GET: get data
+	POST: send data
+	PUT: update data
+	DELETE: delete data
+                                          PART 3: Middleware
+   14. Middleware is a function that runs between request and response.
+   15. Types of Middleware:
+i.	Application-level
+ii.	Router-level
+iii.	Built-in
+iv.	Error-handling
+v.	Third-party
+16 . Custom Middleware: app.use((req, res, next) => { console.log("Request received"); next(); });
+17. If next() is not called, the request stops and the page does not load.
+18. app.use(express.json()) is used to read JSON data from requests.
+19. Middleware is a function, while JSON is a data format.
+                                             PART 4: Backend & API Development
+20. JSON is a data format used to store and transfer data: { "name": "Ali" }
+21. req contains request data, res is used to send response.
+22. res.send() sends text/HTML, res.json() sends JSON.
+23.const PORT = process.env.PORT || 3000; This uses environment port or default 3000.
+24. Event Loop allows Node.js to handle multiple requests efficiently (non-blocking).
+                              Final Challenge:
+const express = require("express"); const app = express();
+app.use(express.json());
+app.use((req, res, next) => { console.log(req.method, req.url); next(); });
+app.get("/", (req, res) => { res.send("Home"); });
+app.get("/about", (req, res) => { res.send("About"); });
+app.post("/login", (req, res) => { res.json({ message: "Login success" }); });
+app.listen(4000);
+

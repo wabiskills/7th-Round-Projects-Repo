@@ -1,0 +1,94 @@
+Section A:Memory &Basic Concepts
+#########################################
+1. What is Express.js? It is a minimal and flexible web application framework for Node.js that provides a robust set of features for web and mobile applications.
+*************************************************
+2. ​Runtime: Express.js works on top of the Node.js runtime.
+*****************************************************************
+3. ​Why Express? We use it instead of the http module because it simplifies routing, handles middleware easily, and requires much less boilerplate code to perform complex tasks.
+********************************************************
+4. ​Port Number: A port number is a communication endpoint (like a specific "door" on a building) that allows the computer to identify which specific process or service should receive incoming network traffic.
+***********************************************************
+5. ​app.listen(3000);: This line tells the server to start "listening" for incoming requests on port 3000.
+​*******************************************************
+6. Middleware: Functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle.
+7. ​Default HTTP Method: The default method used by browsers for a URL is GET.
+*********************************************8
+8. ​'req' and 'res': They stand for Request (data coming in from the user) and Response (data being sent back to the user).
+*************************************************
+​Section B: Understanding & Short Explanation
+################################################3
+9. ​GET vs. POST: app.get() is used to request/retrieve data from the server, while app.post() is used to send data to the server to create or update a resource.
+​*****************************************************
+10. No Port: If you run a server without a port, it generally won't start or won't be accessible because it doesn't have an address to listen on.
+​******************************************8
+11. express.json(): This is a built-in middleware that parses incoming requests with JSON payloads, making the data available in req.body.
+***************************************
+​12. Output: The browser will display the text: "Welcome to Backend!".
+************************************************
+13. ​Middleware Importance: It's vital for tasks like authentication, logging, or data parsing. Example: A middleware that checks if a user is logged in before letting them see their profile.
+******************************************************
+14. ​Same Port Conflict: If two apps try to use the same port, the second one will fail to start and throw an "EADDRINUSE" error.
+*********************************************
+​Section C: Code Reading & Problem Solving
+#################################################
+15. The Mistake: The app.listen() function is missing a port number inside the parentheses. 
+***************************************
+16. Middleware Step-by-Step:
+​Step 1: A request hits the server.
+​Step 2: The code logs "Someone made a request" to the terminal.
+​Step 3: next() is called, passing control to the next route or middleware.
+**********************************************
+17.Removing next(): The request will hang and eventually time out because the server never moves on to send a response or hit the next function. 
+*************************************************************
+18. Code for Port 5000 /about:
+    const express = require('express');
+const app = express();
+
+app.get('/about', (req, res) => {
+    res.send('This is About Page');
+});
+
+app.listen(5000);
+********************************
+Section D: Practical Coding Tasks
+####################################
+const express = require('express');
+const app = express();
+const PORT = 4000;
+
+// 21) Global Middleware (Logging)
+app.use((req, res, next) => {
+    console.log('Middleware is working');
+    next();
+});
+
+// 19) Homepage
+app.get('/', (req, res) => {
+    res.send('My First Express Server');
+});
+
+// 20) Contact Route
+app.get('/contact', (req, res) => {
+    res.send('Contact us at info@email.com');
+});
+
+// 22) User Route (JSON Data)
+app.get('/user', (req, res) => {
+    res.json({
+        "name": "John",
+        "role": "Student"
+    });
+});
+
+// 23) Challenge Question (Admin check)
+app.get('/admin-check', (req, res) => {
+    if (req.query.admin === 'true') {
+        res.send('Welcome Admin');
+    } else {
+        res.send('Access Denied');
+    }
+});
+
+app.listen(PORT, () => {
+    console.log(Server running on http://localhost:${PORT});
+});

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css">
+    <title>Simple Calculater Build</title>
+
+</head>
+<body>
+    
+<section id="=container_calculator">
+<div class="calculator">
+<form action="">
+<div>
+    <input type="text" name="display" id="display">
+</div>
+<div id="part_one">
+<input type="button" name="" id="" value="AC" onclick=" clearDisplay()">
+<input type="button" name="" id="" value="DE" onclick="deleteLast()">
+<input type="button" name="" id="" value="." onclick="appendToDisplay('.')">
+<input type="button" name="" id="" value="/" onclick="appendToDisplay('/')">
+</div>
+<div id="part_two">
+<input type="button" name="" id="" value="7" onclick="appendToDisplay('7')">
+<input type="button" name="" id="" value="8" onclick="appendToDisplay('8')">
+<input type="button" name="" id="" value="9" onclick="appendToDisplay('9')">
+<input type="button" name="" id="" value="*" onclick="appendToDisplay('*')">
+</div>
+<div id="part_three">
+<input type="button" name="" id="" value="4" onclick="appendToDisplay('4')">
+<input type="button" name="" id="" value="5" onclick="appendToDisplay('5')">
+<input type="button" name="" id="" value="6" onclick="appendToDisplay('6')">
+<input type="button" name="" id="" value="-" onclick="appendToDisplay('-')">
+</div>
+<div id="part_four">
+<input type="button" name="" id="" value="1" onclick="appendToDisplay('1')">
+<input type="button" name="" id="" value="2" onclick="appendToDisplay('2')">
+<input type="button" name="" id="" value="3" onclick="appendToDisplay('3')">
+<input type="button" name="" id="" value="+" onclick="appendToDisplay('+')">
+</div>
+<div id="part_five">
+<input type="button" name="" id="" value="00" onclick="appendToDisplay('00')">
+<input type="button" name="" id="" value="0" onclick="appendToDisplay('0')">
+<input type="button" name="" id="equal" value="=" onclick="calculate()">
+
+</div>
+</div>
+
+</form>
+</section>
+<script src="./calculator.js"></script>
+
+</body>
+</html>
